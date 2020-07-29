@@ -10,11 +10,11 @@ REF :
 3. All you need is Attention : To overcome the loss of info, a new global context vector is created using all the hidden states of encoder. 
 
 4. Attention in Transformer : Attention says how the current state of decoder is related to our global input sequence.
- ![Context_Vector_Image](/Users/sharshita/Desktop/Screenshot 2020-07-29 at 6.50.08 PM.png)
+ ![Context_Vector_Image](https://user-images.githubusercontent.com/16293041/88809285-910ade00-d1d1-11ea-8999-b9614d193806.png)
  
  ci = weighted sum of all h(hidden states)
  
- ![contextVectorFormula](/Users/sharshita/Desktop/Screenshot 2020-07-29 at 6.56.42 PM.png)
+ ![contextVectorFormula](https://user-images.githubusercontent.com/16293041/88809186-733d7900-d1d1-11ea-92e2-675c479785c6.png)
  
  We apply softmax function to create weights for weighted sum which is alpha.
  

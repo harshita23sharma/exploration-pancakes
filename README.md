@@ -4,8 +4,8 @@ Explore and implement latest advancements in Data Science.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Mainly using [tensorflow](https://www.tensorflow.org/tutorials/quickstart/advanced) for all applications.
 
 ```bash
-pip install foobar
+pip install tensorflow==2.1
 ```
