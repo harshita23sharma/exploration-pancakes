@@ -14,7 +14,7 @@ REF :
  
  ci = weighted sum of all h(hidden states)
  
- ![contextVectorFormula](https://user-images.githubusercontent.com/16293041/88809186-733d7900-d1d1-11ea-92e2-675c479785c6.png)
+ <img src="https://user-images.githubusercontent.com/16293041/88809186-733d7900-d1d1-11ea-92e2-675c479785c6.png" width="200">
  
  We apply softmax function to create weights for weighted sum which is alpha.
  
