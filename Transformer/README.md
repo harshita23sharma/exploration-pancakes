@@ -24,9 +24,45 @@ REF :
  Now that we have those similarity weights (e), we just apply softmax to have real weights that we can use for weighted sum (alpha).
  Now we apply those weights to all the hidden states of the encoder (h) to get the context vector c. So, this c vector is made of hidden states of encoder which are related to current state of decoder.
  
+Encoder in Transformer takes complete input at once.
+
+<img src= "https://user-images.githubusercontent.com/16293041/88812711-ab46bb00-d1d5-11ea-987a-f485998b0039.png" width="420" height="420">
+
+Decoder takes one input as its previous output. So if it's beginning of sequence, it takes a start token as input.
+
+Iteration 1 :
+encoder inp : Hi, How are you.
+decoder inp : [start token]
+decoder op : Hi
+
+Iteration 2 :
+encoder inp : Hi, How are you.
+decoder inp : [start token] Hi
+decoder op : Hi I
+
+Iteration 2 :
+encoder inp : Hi, How are you.
+decoder inp : [start token] Hi I
+decoder op : Hi I am
 
 5. Encoding for Transformer :
+
+Scaled Dot-Product attention : (Q K transpose) V where Q is context vector and K=V .
+
+Multi-Head Attention : Splits the space into subspaces and avoids fading of actual context during attention mechanism.
+Multi head attention allows model to jointly attend to information from different representation subspaces to compose with the full attention layer.
+
+Mathematically, we first apply a huge linear transformation, so a dense layer in tensorflow.Then we split the space in subspaces.
+During the first transformation, we rearrange all the dimesions of all embedding to put together the ones that work together.
+Post that we split. Because if we split first, the 1st, 2nd and 3rd dimension will always occur together and will not have access to the other dimensions.
+
+
+
+
 6. Transformer Architecture details :
+
+Positional Encoding: Attention mechanism is very global and it is symmetrical wrt position. So we add positional encoding after input embedding to keep trach of positions of words/elements.
+
 
 # Transformer - Application.
 English- French Translator
