@@ -31,25 +31,40 @@ Encoder in Transformer takes complete input at once.
 Decoder takes one input as its previous output. So if it's beginning of sequence, it takes a start token as input.
 
 Iteration 1 :
+
 encoder inp : Hi, How are you.
+
 decoder inp : [start token]
+
 decoder op : Hi
 
+
 Iteration 2 :
+
 encoder inp : Hi, How are you.
+
 decoder inp : [start token] Hi
+
 decoder op : Hi I
 
 Iteration 2 :
+
 encoder inp : Hi, How are you.
+
 decoder inp : [start token] Hi I
+
 decoder op : Hi I am
+
+...
+
 
 5. Encoding for Transformer :
 
-Scaled Dot-Product attention : (Q K transpose) V where Q is context vector and K=V .
+#### Scaled Dot-Product attention :
+(Q K transpose) V where Q is context vector and K=V .
 
-Multi-Head Attention : Splits the space into subspaces and avoids fading of actual context during attention mechanism.
+#### Multi-Head Attention :
+Splits the space into subspaces and avoids fading of actual context during attention mechanism.
 Multi head attention allows model to jointly attend to information from different representation subspaces to compose with the full attention layer.
 
 Mathematically, we first apply a huge linear transformation, so a dense layer in tensorflow.Then we split the space in subspaces.
@@ -61,7 +76,22 @@ Post that we split. Because if we split first, the 1st, 2nd and 3rd dimension wi
 
 6. Transformer Architecture details :
 
-Positional Encoding: Attention mechanism is very global and it is symmetrical wrt position. So we add positional encoding after input embedding to keep trach of positions of words/elements.
+#### Positional Encoding:
+Attention mechanism is very global and it is symmetrical wrt position. So we add positional encoding after input embedding to keep track of positions of words/elements.
+
+#### Feed Forward Sublayer: 
+Composed of two linear transformations. So it's made up of two dense layers that learns on its own.
+FFN(x) = max(0, xW1 + b1)W2 + b , where x is inp to fed forward neural n/w.
+Relu is applied to it's linear transformation. It removes all negative values.
+This FFN is applied to each position separately and identically. It is also different for each sub layer.
+
+#### Add and Norm : Output of above sublayer is added to input of the sublayer and then we do standard normalization. 
+#### Residual connection. It makes the learning easier, mainly back propagation.
+Adding i/p of layer to it's output.
+
+#### Last inear:
+Output of the decoder goes through dense layer with vocab_size units and a softmax,
+to get the probabilities for each word
 
 
 # Transformer - Application.
