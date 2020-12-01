@@ -97,6 +97,7 @@ to get the probabilities for each word
 # Transformer - Application.
 English- French Translator
 
+Dataset path : https://www.statmt.org/europarl/
 
 
 
